@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Be My Valentine 💘</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Comic Sans MS", "Segoe UI", cursive;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+    }
+
+    h1 {
+      color: #ff4d6d;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .gif {
+      width: 220px;
+      border-radius: 15px;
+      margin: 15px 0;
+    }
+
+    button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      margin: 10px;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+    }
+
+    .no {
+      background: #ddd;
+      color: #333;
+      position: relative;
+    }
+
+    .hearts {
+      font-size: 2rem;
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- FRONT PAGE GIF -->
+    <img
+      class="gif"
+      src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif"
+      alt="Cute love gif"
+    />
+
+    <div class="hearts">💖 💕 💘</div>
+    <h1>Be My Valentine?</h1>
+    <p>You better know the answer 🥰</p>
+
+    <button class="yes" onclick="sayYes()">Yes 💞</button>
+    <button class="no" onmouseover="moveNo(this)">No 🙈</button>
+  </div>
+
+  <script>
+    function sayYes() {
+      document.querySelector(".card").innerHTML = `
+        <img
+          class="gif"
+          src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExc3BwaHF3ODNlcDF2YXNheGxteWc0MGhyMG5mdGpyYjJkcGZmeXp4NSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/qKQQUKSSbWBkO2V3KX/giphy.gif"
+          alt="kiss gif"
+        />
+
+        <h1>YAY!! Good answer! 💘</h1>
+        <p>Best Valentine ever 🥰<br>See you soon 💕</p>
+        <div class="hearts">💖 💕 💘 💖</div>
+      `;
+    }
+
+    function moveNo(button) {
+      const x = Math.random() * 200 - 100;
+      const y = Math.random() * 200 - 100;
+      button.style.transform = `translate(${x}px, ${y}px)`;
+    }
+  </script>
+</body>
+</html>
