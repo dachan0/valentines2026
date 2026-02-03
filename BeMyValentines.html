@@ -2,52 +2,61 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Be My Valentine 💘</title>
+
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      min-height: 100vh;
       background: linear-gradient(135deg, #ff9a9e, #fad0c4);
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: "Comic Sans MS", "Segoe UI", cursive;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
     .card {
       background: white;
-      padding: 40px;
+      padding: 30px 20px;
       border-radius: 20px;
       text-align: center;
       box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
       max-width: 400px;
+      width: 100%;
     }
 
     h1 {
       color: #ff4d6d;
-      font-size: 2.5rem;
+      font-size: 2.2rem;
       margin-bottom: 10px;
     }
 
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
       margin-bottom: 20px;
     }
 
     .gif {
-      width: 220px;
+      width: 100%;
+      max-width: 220px;
+      height: auto;
       border-radius: 15px;
-      margin: 15px 0;
+      margin: 15px auto;
+      display: block;
     }
 
     button {
-      padding: 12px 24px;
+      padding: 12px 20px;
       font-size: 1rem;
       border: none;
       border-radius: 30px;
       cursor: pointer;
-      margin: 10px;
+      margin: 8px;
       transition: transform 0.2s ease;
+      min-width: 120px;
     }
 
     button:hover {
@@ -66,7 +75,7 @@
     }
 
     .hearts {
-      font-size: 2rem;
+      font-size: 1.8rem;
       animation: float 2s infinite ease-in-out;
     }
 
@@ -75,12 +84,26 @@
       50% { transform: translateY(-10px); }
       100% { transform: translateY(0); }
     }
+
+    /* 📱 Extra polish for very small screens */
+    @media (max-width: 360px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .hearts {
+        font-size: 1.5rem;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="card">
-
-    <!-- FRONT PAGE GIF -->
     <img
       class="gif"
       src="https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExYzBqdXh5ZnkzdHp3eTE1aHFocHM0amZ0bG5jampndGx5a3RqdmQ4MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5b3N5hXaERPgGV764K/giphy.gif"
@@ -111,11 +134,10 @@
     }
 
     function moveNo(button) {
-      const x = Math.random() * 200 - 100;
-      const y = Math.random() * 200 - 100;
+      const x = Math.random() * 150 - 75;
+      const y = Math.random() * 150 - 75;
       button.style.transform = `translate(${x}px, ${y}px)`;
     }
   </script>
 </body>
 </html>
-
